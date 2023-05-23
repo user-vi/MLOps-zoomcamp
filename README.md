@@ -27,7 +27,14 @@ vim .bachrc
 export PATH="${HOME}/soft:${PATH}" #add string
 source .bachrc
 
-sudo docker run hello-world # docker without sudo https://docs.docker.com/engine/install/linux-postinstall/
+sudo docker run hello-world 
+
+# docker without sudo https://docs.docker.com/engine/install/linux-postinstall/
+sudo groupadd docker
+sudo usermod -aG docker $USER
+logout
+
+
 ```
 
 
