@@ -37,4 +37,7 @@ logout
 
 ```
 
+4) open VScode and connect to remote machine using remoteSSH extention
+5) set up port forwarding: go to PORTS in VScode and set port=8888
+
 
