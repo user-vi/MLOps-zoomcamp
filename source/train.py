@@ -17,7 +17,7 @@ def load_pickle(filename: str):
 @click.command()
 @click.option(
     "--data_path",
-    default="../output",
+    default="./output",
     help="Location where the processed NYC taxi trip data was saved"
 )
 def run_train(data_path: str):
@@ -30,12 +30,12 @@ def run_train(data_path: str):
 
     rmse = mean_squared_error(y_val, y_pred, squared=False)
     
-    with open("regressor.pkl", "wb") as f:
+    with open("./models/regressor.pkl", "wb") as f:
         pickle.dump(rf, f)
-    
+
     with mlflow.start_run():
         mlflow.log_param('rmse', rmse)
-        mlflow.log_artifact('models/regressor.pkl', artifact_path='models/')
+        mlflow.log_artifact(local_path='models/regressor.pkl', artifact_path='artifacts')
 
 
 if __name__ == '__main__':
