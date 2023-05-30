@@ -41,3 +41,6 @@ logout
 5) set up port forwarding: go to PORTS in VScode and set port=8888
 
 
+```
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+```
