@@ -51,7 +51,7 @@ def run_optimization(data_path: str, num_trials: int):
 
         with mlflow.start_run():
             mlflow.log_param('rmse', rmse)
-            # mlflow.log_params(params)
+            mlflow.log_params(params)
 
         return rmse
 
